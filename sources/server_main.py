@@ -12,6 +12,7 @@ from modelatt并联备份4 import Model2
 from dataloader import MiniBatch
 from segment import prepareImg, wordSegmentation
 import time
+from PIL import Image
 import numpy as np
 import tensorflow as tf
 
@@ -70,6 +71,11 @@ def upload():
     upload_path = os.path.join(basepath, 'static/images', secure_filename(filename))
     image_data = cv2.imdecode(bs, cv2.IMREAD_COLOR)
     cv2.imwrite(upload_path, image_data)
+
+    im = Image.open(upload_path)
+
+    im_rotate = im.rotate(-90, expand=1)
+    im_rotate.save(upload_path)
     return main(upload_path, isPrint)
 
 

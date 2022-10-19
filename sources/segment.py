@@ -68,5 +68,5 @@ def prepareImg(img, height):
     h = img.shape[0]
     factor = height / h
     x = cv2.resize(img, dsize=None, fx=factor, fy=factor)
-    # x = cv2.rotate(x, cv2.ROTATE_90_COUNTERCLOCKWISE)
+    x = cv2.rotate(x, cv2.ROTATE_90_COUNTERCLOCKWISE)
     return x
