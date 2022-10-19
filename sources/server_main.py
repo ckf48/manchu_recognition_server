@@ -47,7 +47,7 @@ def main(filepath, isPrint):
     #             recognized += predict(model, wordImg) + ' '
     #             draw.append(wordBox)
     #         recognized += '\n'
-    if isPrint:
+    if isPrint == "true":
         recognized = predict(model2, img)
     else:
         recognized = predict(model, img)
